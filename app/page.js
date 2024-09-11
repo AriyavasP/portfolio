@@ -11,16 +11,19 @@ export default function Home() {
       id: 1,
       name: "Restaurant Menu (Freelance)",
       description: `This project focuses on developing a comprehensive menu management system. It begins with creating features for adding and editing menu items, ensuring ease of use for administrators to manage menu content efficiently. The next focus is on organizing menus into categories, allowing users to navigate and present menu items in a clear and orderly manner. Lastly, the design will be responsive, ensuring seamless use across all devices, including mobile phones, tablets, and desktops. The system will be built using Laravel, a robust and flexible PHP framework, to ensure long-term usability and scalability.`,
+      link: "https://viewdeeangsila.com/"
     },
     {
       id: 2,
       name: "Rubber Trade",
       description: "This project involves a sophisticated rubber auction system with key functionalities such as handling auctions, processing payments, creating contracts on a blockchain, and generating official government reports. The main responsibilities include maintaining the current system and enhancing it using cutting-edge technologies like NestJS and Angular. Additionally, the role requires designing reports with JasperReports for government documentation, developing database structures based on feature requirements, and implementing system monitoring to ensure smooth operations. Another important aspect of this project is managing the CI/CD pipeline for efficient deployment and overseeing release processes to ensure timely updates and improvements.",
+      link: null
     },
     {
       id: 3,
       name: "Retail Selft Service",
       description: "This project centers around building a self-service system for discount calculation and payment processing using Golang. The API is designed to handle SKU promotion calculations, ensuring precise discounting for products. To ensure robust functionality, unit tests are implemented, and performance is enhanced through the use of message queues. Furthermore, the system is integrated into the AWS ecosystem, leveraging its powerful tools and services for scalability and efficiency.",
+      link: null
     }
   ];
 
@@ -90,7 +93,10 @@ export default function Home() {
           <div key={project.id} className="bg-black border border-white p-6 rounded-lg m-5">
             <h3 className="text-xl font-semibold text-white">{project.name}</h3>
             <p className="text-gray-300 mt-2">{project.description}</p>
-            <a href="#project-details" className="text-white hover:text-gray-400 mt-4 inline-block">View project</a>
+            { project.link !== null
+            ? <a href={project.link} className="text-white hover:text-gray-400 mt-4 inline-block" target="_blank">View project</a>
+            : ''
+            }
           </div>
         ))}
         <div className="flex justify-center mt-8">
